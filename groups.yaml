@@ -1,0 +1,14 @@
+---
+
+vEOS_group:
+    platform: "arista_eos"
+
+IOS_group:
+    platform: "ios"
+
+us_group:
+    data:
+        ntp_server: "4.4.4.4"
+
+vEOS: {}
+

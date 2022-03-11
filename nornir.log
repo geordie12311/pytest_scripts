@@ -1,0 +1,1776 @@
+2022-03-06 15:58:02,957 -  nornir.core -     INFO -        run() - Running task 'pullospf' with args {} on 10 hosts
+2022-03-06 15:58:07,552 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-03-06 15:58:07,553 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 13, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 15:58:07,565 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-03-06 15:58:07,566 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 13, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 15:58:08,062 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-03-06 15:58:08,062 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 13, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 15:58:34,935 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 15:58:39,391 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-03-06 15:58:39,479 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 9, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 15:58:39,580 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-03-06 15:58:39,580 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 9, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 15:58:40,033 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-03-06 15:58:40,034 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 9, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 16:00:25,993 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:00:26,604 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:00:26,790 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:00:26,880 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:01:38,229 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:01:38,796 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:01:38,800 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:01:39,322 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:02:12,379 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 10 hosts
+2022-03-06 16:03:11,100 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:03:11,838 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:03:11,863 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:03:12,006 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:04:49,836 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:04:50,392 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:04:50,565 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:04:50,877 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:06:41,163 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:06:41,741 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:06:41,783 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:06:42,048 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:08:03,280 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:08:03,410 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 488, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 158, in read
+    buf = self.session.read(65535)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 493, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 287, in channel_authenticate_ssh
+    buf = self.read()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 99, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 177, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 165, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-06 16:08:03,411 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 16:08:04,016 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:08:04,317 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:08:42,486 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:08:42,586 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 488, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 158, in read
+    buf = self.session.read(65535)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 493, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 287, in channel_authenticate_ssh
+    buf = self.read()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 99, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 177, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 165, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-06 16:08:42,587 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 16:08:43,203 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:08:43,580 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:09:53,354 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:09:53,457 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 488, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 158, in read
+    buf = self.session.read(65535)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 493, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 287, in channel_authenticate_ssh
+    buf = self.read()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 99, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 177, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 165, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-06 16:09:53,458 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 16:09:53,861 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:09:54,418 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 13, in pull_ospf
+    interfaces = task.host["facts"]["interfaces"]
+TypeError: list indices must be integers or slices, not str
+
+2022-03-06 16:10:23,555 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 340, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 316, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out during in channel ssh authentication
+
+2022-03-06 16:10:23,556 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 11, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 16:13:15,633 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:15:01,586 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:15:04,123 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 20, in pull_ospf
+    assert num_neigbors == 2
+AssertionError
+
+2022-03-06 16:16:07,612 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:18:08,404 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-06 16:18:38,594 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 340, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/scrapli/decorators.py", line 316, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out during in channel ssh authentication
+
+2022-03-06 16:18:38,594 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 12, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/geordie/Nornir-automation/pytest_scripts/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-06 16:20:35,558 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-09 15:43:14,468 -  nornir.core -     INFO -        run() - Running task 'pull_ospf' with args {} on 10 hosts
+2022-03-09 15:43:18,452 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 427, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 126, in read
+    buf = self.session.read(65535)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 432, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/usr/lib/python3.10/dist-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 276, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 337, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    buf = self.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 95, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 173, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 133, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-09 15:43:18,452 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pull_ospf' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf1.py", line 12, in pull_ospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-09 15:50:29,111 -  nornir.core -     INFO -        run() - Running task 'pullospf' with args {} on 10 hosts
+2022-03-09 15:50:29,300 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 427, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 126, in read
+    buf = self.session.read(65535)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 432, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/usr/lib/python3.10/dist-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 276, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 337, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    buf = self.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 95, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 173, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 133, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-09 15:50:29,301 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 12, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-09 15:50:32,969 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 22, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:50:32,972 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 22, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:50:32,976 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 22, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:50:32,977 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 10 hosts
+2022-03-09 15:53:33,498 -  nornir.core -     INFO -        run() - Running task 'pullospf' with args {} on 10 hosts
+2022-03-09 15:53:33,692 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 427, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 126, in read
+    buf = self.session.read(65535)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 432, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/usr/lib/python3.10/dist-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 276, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 337, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    buf = self.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 95, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 173, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 133, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-09 15:53:33,693 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 12, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-09 15:53:37,186 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 22, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:53:37,187 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 22, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:53:37,190 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 22, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:53:37,733 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 10 hosts
+2022-03-09 15:59:42,838 -  nornir.core -     INFO -        run() - Running task 'pullospf' with args {} on 10 hosts
+2022-03-09 15:59:43,013 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 427, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 126, in read
+    buf = self.session.read(65535)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 432, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/usr/lib/python3.10/dist-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 276, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 337, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    buf = self.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 95, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 173, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 133, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-09 15:59:43,014 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 9, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-09 15:59:46,637 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:59:46,640 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:59:46,642 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 15:59:46,644 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 10 hosts
+2022-03-09 16:04:39,438 -  nornir.core -     INFO -        run() - Running task 'pullospf' with args {} on 10 hosts
+2022-03-09 16:04:39,622 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 427, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 126, in read
+    buf = self.session.read(65535)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 432, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/usr/lib/python3.10/dist-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 276, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 337, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    buf = self.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 95, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 173, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 133, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-09 16:04:39,623 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 9, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-09 16:04:43,248 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:04:43,251 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:04:43,253 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2
+AssertionError: assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:04:43,255 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 10 hosts
+2022-03-09 16:05:35,041 -  nornir.core -     INFO -        run() - Running task 'pullospf' with args {} on 10 hosts
+2022-03-09 16:05:35,207 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 427, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 126, in read
+    buf = self.session.read(65535)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 432, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/usr/lib/python3.10/dist-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 276, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 337, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    buf = self.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 95, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 173, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 133, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-09 16:05:35,213 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 9, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-09 16:05:38,811 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 2 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,813 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 3 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,813 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 2 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,822 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 3 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,836 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 3 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,837 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 2 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,838 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 2 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,839 - nornir.core.task -    ERROR -      start() - Host 'CSR1': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 2 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,840 - nornir.core.task -    ERROR -      start() - Host 'CSR2': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 1
+AssertionError: assert 2 == 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:05:38,841 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 10 hosts
+2022-03-09 16:06:52,199 -  nornir.core -     INFO -        run() - Running task 'pullospf' with args {} on 10 hosts
+2022-03-09 16:06:52,391 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 427, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 126, in read
+    buf = self.session.read(65535)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/ptyprocess.py", line 432, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/usr/lib/python3.10/dist-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/usr/lib/python3.10/dist-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/usr/lib/python3.10/dist-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 276, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 337, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    buf = self.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 95, in decorate
+    return self._multiprocessing_timeout(
+  File "/usr/lib/python3.10/dist-packages/scrapli/decorators.py", line 173, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/dist-packages/scrapli/transport/plugins/system/transport.py", line 133, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2022-03-09 16:06:52,392 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 9, in pullospf
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-03-09 16:06:56,019 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2, f"{task.host} FAILED"
+AssertionError: R7 FAILED
+assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:06:56,022 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2, f"{task.host} FAILED"
+AssertionError: R3 FAILED
+assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:06:56,023 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pullospf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 83, in wrapper
+    func(*args, **kwds)
+  File "/home/geordie/Nornir-automation/pytest_scripts/test_ospf2.py", line 19, in pullospf
+    assert num_neighbors == 2, f"{task.host} FAILED"
+AssertionError: R4 FAILED
+assert 3 == 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/dist-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 88, in wrapper
+    log_failure(e)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 205, in log_failure
+    (file, line, func, context) = get_full_context(level)
+  File "/home/geordie/.local/lib/python3.10/site-packages/pytest_check/check_methods.py", line 193, in get_full_context
+    (_, filename, line, funcname, contextlist) = inspect.stack()[level][0:5]
+IndexError: list index out of range
+
+2022-03-09 16:06:56,652 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 10 hosts

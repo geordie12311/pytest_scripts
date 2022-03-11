@@ -1,0 +1,71 @@
+---
+R1:
+    hostname: "10.10.10.101"
+    groups:
+      - IOS_group
+    data:  
+      role: "Leaf"
+
+R2:
+    hostname: "10.10.10.102"
+    groups:
+      - IOS_group
+    data:  
+      role: "Leaf"       
+
+R3:
+    hostname: "10.10.10.103"
+    groups:
+      - IOS_group
+    data:  
+      role: "Spine"        
+
+R4:
+    hostname: "10.10.10.104"
+    groups:
+      - IOS_group
+    data:  
+      role: "Spine"          
+
+R5:
+    hostname: "10.10.10.105"
+    groups:
+      - IOS_group
+    data:  
+      role: "Leaf"   
+
+R6:
+    hostname: "10.10.10.106"
+    groups:
+      - IOS_group
+    data:  
+      role: "Leaf"      
+
+R7:
+    hostname: "10.10.10.107"
+    groups:
+      - IOS_group
+    data:  
+      role: "Spine"      
+
+R8:
+    hostname: "10.10.10.108"
+    groups:
+      - IOS_group
+    data:  
+      role: "Spine"               
+
+CSR1:
+    hostname: "10.10.10.112"
+    groups:
+      - IOS_group
+    data:  
+      role: "Leaf"       
+
+CSR2:
+    hostname: "10.10.10.113"
+    groups:
+      - IOS_group
+    data:  
+      role: "Leaf"       
+    
