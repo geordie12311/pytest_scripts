@@ -17,7 +17,7 @@ def get_spine_leaf_dev_names():
 
 class TestOSPFNeighbors:
     NEIGHBOR_COUNT = {
-        "Spine": 4,
+        "Spine": 3,
         "Leaf": 2
     }
 

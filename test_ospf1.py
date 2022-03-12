@@ -19,7 +19,7 @@ def get_spine_leaf_dev_names():
 
 
 class TestOSPFNeighbors:
-    NEIGHBOR_COUNT = {"Spine": 4, "Leaf": 6}
+    NEIGHBOR_COUNT = {"Spine": 3, "Leaf": 2}
 
     @pytest.fixture(scope="class", autouse=True)
     def setup_teardown(self, pytestnr):
