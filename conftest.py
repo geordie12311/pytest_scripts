@@ -5,4 +5,3 @@ def pytestnr():
     pytestnr = InitNornir(config_file="config.yaml")
     yield pytestnr
     pytestnr.close_connections()
-
